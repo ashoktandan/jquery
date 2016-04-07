@@ -1,0 +1,94 @@
+$(document).ready(function () {
+    $('#expand').click(function () {
+        var chk = $(this).is(':checked');
+        if (chk == true) {
+            $('.col-sm-3').hide();
+            $('#tabdiv').removeClass('col-sm-9');
+        }
+        else {
+            $('.col-sm-3').show();
+            $('#tabdiv').addClass('col-sm-9');
+        }
+    });
+    colorchange();
+    function colorchange() {
+        $('p').each(function () {
+            if ($(this).attr('id') < 20) {
+                $(this).parent().parent().css('background-color', '#eeeeee');
+            }
+            else {
+                $(this).parent().parent().css('background-color', '#50d090');
+            }
+        });
+    }
+    $(document).change(function () {
+        colorchange();
+    });
+    //$('#r1').change(function () {
+    //    var x = $(this).val();
+    //    $('span').each(function () {
+    //        if (parseInt($(this).attr('id')) < x) {
+    //            $(this).parent().parent().hide();
+    //        }
+    //        else if (parseInt($(this).attr('id')) > x) {
+    //                $(this).parent().parent().show();
+    //        }
+    //    });
+    //});
+    //$('#r2').change(function () {
+    //    var x = $(this).val();
+    //    $('h6').each(function () {
+    //        if (parseInt($(this).attr('id')) > x) {
+    //            $(this).parent().parent().hide();
+    //        }
+    //        else if (parseInt($(this).attr('id')) < x) {
+    //            $(this).parent().parent().show();
+    //        }
+    //    });
+    //});
+    //$('#r3').change(function () {
+    //    var x = $(this).val();
+    //    $('label').each(function () {
+    //        if (parseInt($(this).attr('id')) > x) {
+    //            $(this).parent().parent().hide();
+    //        }
+    //        else if (parseInt($(this).attr('id')) < x) {
+    //            $(this).parent().parent().show();
+    //        }
+    //    });
+    //});
+   // var x, y, z;
+    //$('#r1').change(function () {
+    //    x = $('#r1').val();
+    //    $('h1').each(function () {
+    //        if (parseInt($(this).attr('id')) < x) {
+    //            $(this).parent().parent().hide();
+    //        }
+    //        else if (parseInt($(this).attr('id')) > x) {
+    //            $(this).parent().parent().show();
+    //        }
+    //    });
+    //});
+    //$('#r2').change(function () {
+    //    y = $('#r2').val();
+    //    $('h2').each(function () {
+    //        if (parseInt($(this).attr('id')) > y) {
+    //            $(this).parent().parent().hide();
+    //        }
+    //        else if (parseInt($(this).attr('id')) < y) {
+    //            $(this).parent().parent().show();
+    //        }
+    //    });
+    //});
+    //$('#r3').change(function () {
+    //z = $('#r3').val();
+    //    $('h3').each(function () {
+    //        if (parseInt($(this).attr('id')) > z) {
+    //            $(this).parent().parent().hide();
+    //        }
+    //        else if (parseInt($(this).attr('id')) < z) {
+    //            $(this).parent().parent().show();
+    //        }
+    //    });
+    //});
+});
