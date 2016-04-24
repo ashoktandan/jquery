@@ -1,0 +1,17 @@
+ <script>
+        var did;
+        $(document).ready(function () {            
+            $.get("/Home/data", function (v, status) {
+                $(v).each(function (i) {
+                    $('h3').append(i + 1 + " " + v[i].name + "<button onclick='fun(this)'>" + v[i].name + "</button><br>");
+                });
+            });
+            $('h3').append("<hr>");
+        });
+    function fun(ob) {
+        did = ob.innerHTML;
+        $.post("/Home/getdata1", { id: did }, function success(d,status) {
+            alert(status);
+        });
+    }
+    </script>
