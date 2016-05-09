@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            arr = [];
+            p = [];
+            arr =$('#content').text().split('Reported on');
+            for (var i = 1; i < arr.length; i++) {
+           
+                $('table').append('<tr><td class="date">' + arr[i].substring(1, 10) + '</td><td>' + arr[i].replace("-------------------------------- ", "") + '</td></tr>');              
+            }
+            $('#dat').keypress(function () {
+                var l=$('#dat').val().length;
+                var pat = $('#dat').val();
+                $('.date').each(function () {
+                    if ($(this).text().substring(0, l + 1) != pat) {
+                        $(this).parent().parent().hide();
+                    }
+                });
+                //$('table').empty();
+                //for (var i = 0; i < arr.length; i++) {
+                //    p.push(arr[i].substring(1, l));
+                //    alert(p[i]);
+                //    if (p[i].toString() == pat.toString()) {
+                //        $('table').append('<tr><td>' + p[i] + '</td><td>' + arr[i + 1] + '</td></tr>');
+                //    }
+                //}
+                
+
+
+                //for (var z = 0; z < p.length; z++) {
+                //    if (p[z].toString() == pat.toString()) {
+                //        $('table').append('<tr><td>'+p[z]+'</td><td>' + arr[z + 1] + '</td></tr>');
+                //    }
+                //    else if (p[z].toString != pat.toString) {
+                //        alert('not');
+                //    }
+                //}
+            })
+        });
+    </script>
+</head>
+<body class="container">
+    <div class="col-md-4 col-md-offset-4" style="border-style:solid;border-color:#eeeeee;box-shadow:2px;padding:5px;">
+        <input type="text" id="dat" class="form-control" placeholder="search" autofocus/><br />
+    </div>
+    <table class="table table-bordered">
+     <thead><tr class="alert-success"><td>Date</td><td>Exception</td></tr></thead>   
+    </table>
+    <div id="content" class="jumbotron" style="display:none;">
+        --------------------------------
+        Reported on 06-May-16 4:12:56 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 07-May-16 4:13:21 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 08-May-16 4:14:14 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 09-May-16 4:14:26 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 10-May-16 4:14:27 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 11-May-16 4:14:27 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 12-May-16 4:14:28 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 13-May-16 4:14:28 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 14-May-16 4:14:28 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 15-May-16 4:14:28 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 16-May-16 4:14:28 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 17-May-16 4:14:29 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 18-May-16 4:14:29 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 19-May-16 4:14:29 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 20-May-16 4:14:37 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 21-May-16 4:14:37 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 22-May-16 4:14:38 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+        --------------------------------
+        Reported on 23-May-16 4:14:38 PM
+        --------------------------------
+        Source: Input string was not in a correct format.
+        StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+        at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+        at System.Convert.ToInt16(String value)
+        at CommonWebMethod.Page_Load(Object sender, EventArgs e) in f:\RapidCO\RapidCO\COWeb\CommonWebMethod.aspx.cs:line 20
+        Source: mscorlib
+        TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+        Description: Input string was not in a correct format.
+
+    </div>
+</body>
+</html>
