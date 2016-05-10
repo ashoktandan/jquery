@@ -1,0 +1,29 @@
+    (function () {
+    $.fn.datatable = function (options) {      
+        var settings = $.extend({
+            pageitems: 2,
+            pagination: false
+        }, options);
+        var pageHtml = '<ul class="pagination">';
+        if (settings.pagination==true) {
+           var rows = this.find('tr');
+            var pages = rows.length / settings.pageitems;
+            for (var i = 0; i < pages; i++) {
+                pageHtml += '<li><a>' + (i + 1) + '</a></li>';
+            }
+            pageHtml += '</ul>';
+            $(pageHtml).insertAfter(this);
+            this.empty();
+            for (var i = 0; i < settings.pageitems; i++) {
+                $('table').append(rows[i]);
+            }
+            $('a').click(function () {
+                $('table').empty();
+                for (var i = (settings.pageitems * $(this).text() - settings.pageitems) ; i < settings.pageitems * $(this).text() ; i++) {
+                    $('table').append(rows[i]);
+                }
+            });
+        }
+    }
+}
+(jQuery));
