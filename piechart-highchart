@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script>
+        $(document).ready(function () {
+            var data = {
+                chart: { type: 'pie', options3d: { enabled: true, alpha: 45, beta: 0 } },
+                plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',depth: 35,dataLabels: {enabled: true,format: '{point.name}' }}},
+                tooltip: {pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'},
+                title: { text: 'Browsers' },
+                series: [{type: 'pie', name: 'Browser share', data:
+                        [['Firefox', 45.0],
+                        { name: 'Chrome', y: 52.8, sliced: true, selected: true },
+                        ['Safari', 8.5],
+                        ['Opera', 6.2], 
+                        ]}]
+            };
+            $('#container').highcharts(data);
+        });
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
