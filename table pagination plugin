@@ -1,27 +1,76 @@
-    (function () {
-    $.fn.datatable = function (options) {      
+(function () {
+    $.fn.datatable = function (options) {
         var settings = $.extend({
-            pageitems: 2,
+            pageitems: '3',
             pagination: false
         }, options);
-        var pageHtml = '<ul class="pagination">';
-        if (settings.pagination==true) {
-           var rows = this.find('tr');
-            var pages = rows.length / settings.pageitems;
-            for (var i = 0; i < pages; i++) {
-                pageHtml += '<li><a>' + (i + 1) + '</a></li>';
+        var rows = this.find('tr');
+        var table = this;
+        $('<input type="text" id="texttosearch" placeholder="search" class="form-control"/>').insertBefore(table);
+        $('<p>select no of items per page</p><select id="dd"><option value=' + settings.pageitems + '>Default:' + settings.pageitems + '</option><option value="5">5</option><option value="10">10</option></select><hr>').insertBefore('#texttosearch');
+        $('<button id="sort1" class="btn btn-success">sort</button>').insertBefore(table);
+        $('#sort1').click(function () {
+            var x = $('table tr').get();
+            x.sort(function (a, b) {
+                var A = $(a).children().eq(1).text();
+                var B = $(b).children().eq(1).text();
+                    return A-B;
+            })
+            table.empty();
+            $.each(x, function (i,key) {
+                $(table).append(key);
+            })
+            });
+        $('#dd').change(function () {
+            settings.pageitems = $(this).val();
+            totalpages(rows);
+            table.empty();
+            firstpage(rows);
+        });
+        if (settings.pagination == true) {        
+            for(var i = 0; i < rows.length; i++) {
+                $(rows[i]).prepend('<td>'+(i+1)+'</td>');
             }
-            pageHtml += '</ul>';
-            $(pageHtml).insertAfter(this);
-            this.empty();
-            for (var i = 0; i < settings.pageitems; i++) {
-                $('table').append(rows[i]);
-            }
-            $('a').click(function () {
-                $('table').empty();
-                for (var i = (settings.pageitems * $(this).text() - settings.pageitems) ; i < settings.pageitems * $(this).text() ; i++) {
-                    $('table').append(rows[i]);
+            function totalpages(row) {
+                var pages = row.length / settings.pageitems;
+                $('ul').remove();
+                var pageHtml = '<ul class="pagination">';
+                for (var i = 0; i < pages; i++) {
+                    pageHtml += '<li><a class="paging" data-id=' + (i + 1) + '>' + (i + 1) + '</a></li>';
                 }
+                pageHtml += '</ul>';
+                $(pageHtml).insertAfter(table);
+            }
+            totalpages(rows);
+            table.empty();
+            firstpage(rows);
+            function firstpage(rows) {
+                for (var i = 0; i < settings.pageitems; i++) {
+                    $(table).append(rows[i]);
+                }
+                $('.paging').click(function () {
+                    var pageno = $(this).attr('data-id');
+                    $(table).empty();
+                    otherpages(pageno, rows);
+                });
+            }
+            function otherpages(pageno, rows) {
+                for (var i = parseInt((settings.pageitems * pageno - settings.pageitems)) ; i < parseInt(settings.pageitems * pageno) ; i++) {
+                    $(table).append(rows[i]);
+                }
+            }
+            $('#texttosearch').keyup(function () {
+                $(table).empty();
+                var pattern = new RegExp($('#texttosearch').val());
+                var newRows = [];
+                for (var i = 0; i < rows.length; i++) {
+                    var result = pattern.test(rows[i].textContent.toString());
+                    if (result) {
+                        newRows.push(rows[i]);
+                    }
+                }
+                totalpages(newRows);
+                firstpage(newRows);
             });
         }
     }
