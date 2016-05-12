@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script>
+        $(document).ready(function () {
+            var data = {
+                title: { text: 'aaaaaaaaa' },
+                xAxis: { categories: [1, 2, 3, 4] },
+                yAxis: { title: { text: 'gggggggg' } },
+                series: [{ name: 'A', data: [4, 5, 6, 17] },
+                    { name: 'B', data: [14, 15, 36, 27] },
+                    { name: 'C', data: [44, 25, 66, 57] },
+                    { name: 'D', data: [24, 35, 66, 7] }]
+            };
+            $('#container').highcharts(data);
+        });
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
