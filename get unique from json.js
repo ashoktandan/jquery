@@ -11,7 +11,7 @@
                     }
                     return this.filter(function (item, index, list) {
                         for (var i = 0; i < index; i++) {
-                            if (compare(item.name, list[i].name)) {
+                            if (compare(item, list[i])) {
                                 return false;
                             }
                         }
