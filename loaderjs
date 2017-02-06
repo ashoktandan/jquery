@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://ricostacruz.com/nprogress/nprogress.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://ricostacruz.com/nprogress/nprogress.js"></script>
+<script>
+
+var myVar = setInterval(function(){
+NProgress.configure({ easing: 'ease', speed: 1000 });
+myTimer() }, 1000);
+function myTimer() {
+
+    NProgress.start();
+    
+}
+function myStopFunction() {
+NProgress.done();
+    clearInterval(myVar);
+}
+</script>
+</head>
+<body>
+<div class="container" onClick="myStopFunction()">
+dsgsdgsd
+</div>
+</body>
+</html>
